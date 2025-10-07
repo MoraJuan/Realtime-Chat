@@ -97,6 +97,18 @@ npm install
 npm run dev
 ```
 
+## Ejemplos  
+## Inicio sesion
+
+![alt text](image.png)
+
+## Main
+
+![alt text](image-1.png)
+
+## Chat
+![alt text](image-2.png)
+
 ## Uso
 
 1. Abre tu navegador y ve a `http://localhost:5174`

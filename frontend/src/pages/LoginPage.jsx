@@ -41,7 +41,7 @@ const LoginPage = () => {
           <form className='space-y-6' onSubmit={handleSubmit}>
             <div className='space-y-4'>
               <div>
-                <label htmlFor='email' className='block text-sm font-semibold text-gray-200 mb-2'>
+                <label htmlFor='email' className='block text-sm font-medium text-gray-700 mb-2'>
                   Email
                 </label>
                 <div className='relative'>
@@ -52,7 +52,7 @@ const LoginPage = () => {
                     required
                     value={inputs.email}
                     onChange={(e) => setInputs({...inputs, email: e.target.value})}
-                    className='input-modern w-full px-4 py-3 pl-12 text-gray-800 placeholder-gray-400 focus:outline-none'
+                    className='input-modern w-full px-4 py-3 pl-12 text-gray-900 placeholder-gray-400 focus:outline-none'
                     placeholder='tu@email.com'
                   />
                   <svg className='absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -62,7 +62,7 @@ const LoginPage = () => {
               </div>
               
               <div>
-                <label htmlFor='password' className='block text-sm font-semibold text-gray-200 mb-2'>
+                <label htmlFor='password' className='block text-sm font-medium text-gray-700 mb-2'>
                   Contraseña
                 </label>
                 <div className='relative'>
@@ -73,7 +73,7 @@ const LoginPage = () => {
                     required
                     value={inputs.password}
                     onChange={(e) => setInputs({...inputs, password: e.target.value})}
-                    className='input-modern w-full px-4 py-3 pl-12 text-gray-800 placeholder-gray-400 focus:outline-none'
+                    className='input-modern w-full px-4 py-3 pl-12 text-gray-900 placeholder-gray-400 focus:outline-none'
                     placeholder='Tu contraseña'
                   />
                   <svg className='absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -85,18 +85,18 @@ const LoginPage = () => {
 
             <button
               type='submit'
-              className='btn-gradient w-full py-3 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300'
+              className='w-full py-3 px-6 rounded-lg font-semibold text-lg bg-blue-500 text-white hover:bg-blue-600 shadow-sm hover:shadow-md transition-all duration-200'
             >
               Iniciar Sesión
             </button>
           </form>
 
           <div className='mt-6 text-center'>
-            <p className='text-gray-300'>
+            <p className='text-gray-600'>
               ¿No tienes cuenta?{' '}
               <Link
                 to='/signup'
-                className='font-semibold text-white hover:text-purple-200 transition-colors duration-200'
+                className='font-semibold text-blue-500 hover:text-blue-600 transition-colors duration-200'
               >
                 Regístrate aquí
               </Link>

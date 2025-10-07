@@ -16,8 +16,14 @@ export const SocketContextProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      // Crear conexión Socket.IO
-      const newSocket = io('http://localhost:3000')
+      // Crear conexión Socket.IO con URL dinámica
+      const socketUrl = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000'
+      const newSocket = io(socketUrl, {
+        transports: ['websocket', 'polling'],
+        reconnection: true,
+        reconnectionAttempts: 5,
+        reconnectionDelay: 1000
+      })
 
       setSocket(newSocket)
 

@@ -4,11 +4,19 @@ import express from 'express'
 
 const app = express()
 const server = http.createServer(app)
+
+// Socket.IO configuration for production
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:5173',
-        credentials: true
-    }
+        origin: process.env.NODE_ENV === 'production' 
+            ? process.env.FRONTEND_URL || '*'
+            : 'http://localhost:5173',
+        credentials: true,
+        methods: ['GET', 'POST']
+    },
+    // Enable polling as fallback for Vercel
+    transports: ['websocket', 'polling'],
+    allowEIO3: true
 })
 
 // Almacenar usuarios conectados
